@@ -38,6 +38,7 @@ class LinkedList {
         this.length++
         return this
     }
+
     prepend(value) {
         // const newNode = {
         //     value: value,
@@ -49,11 +50,26 @@ class LinkedList {
         this.length++
         return this
     }
+    
+    insert(index, value) {
+        const newNode = new Node(value)
+        let currentNode = this.head
+        for(let i = 1; i <= index; i++){
+            if(i = index) {
+                let tempNode = currentNode.next
+                currentNode.next = newNode
+                newNode.next = tempNode
+            }
+            currentNode = currentNode.next
+        }
+        return this
+    }
 }
 
 let mylinklist = new LinkedList(10)
 mylinklist.append(5)
 mylinklist.prepend(16)
+mylinklist.insert(2, 99)
 console.log(mylinklist.printList())
 
 // practice, not complete
