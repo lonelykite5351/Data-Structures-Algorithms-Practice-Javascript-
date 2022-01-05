@@ -68,6 +68,13 @@ class LinkedList {
         newNode.next = holdingNode;
         return this
     }
+
+    remove(index) {
+        const prevNode = this.traverseToIndex(index - 1)
+        const nextNode = this.traverseToIndex(index + 1)
+        prevNode.next = nextNode
+        return this
+    }
     traverseToIndex(index) {
         let counter = 0
         let currentNode = this.head
@@ -85,6 +92,7 @@ mylinklist.prepend(16)
 mylinklist.insert(2000, 88)
 mylinklist.insert(2, 99)
 mylinklist.insert(2, 100)
+mylinklist.remove(3)
 console.log(mylinklist.printList())
 
 // practice, not complete
