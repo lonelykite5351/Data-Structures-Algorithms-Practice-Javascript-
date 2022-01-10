@@ -66,14 +66,24 @@ class LinkedList {
         const holdingNode = leaderNode.next;
         leaderNode.next = newNode;
         newNode.next = holdingNode;
+        this.length++
         return this
     }
 
     remove(index) {
+        /*  method 1: traverse two times, not good.
+            const prevNode = this.traverseToIndex(index - 1)
+            const nextNode = this.traverseToIndex(index + 1)
+            prevNode.next = nextNode
+            return this
+        */
+        
+        // method 2
         const prevNode = this.traverseToIndex(index - 1)
-        const nextNode = this.traverseToIndex(index + 1)
-        prevNode.next = nextNode
-        return this
+        const prepareToRemoveNode = prevNode.next
+        prevNode.next = prepareToRemoveNode.next
+        this.length--;
+        return this.printList()
     }
     traverseToIndex(index) {
         let counter = 0
