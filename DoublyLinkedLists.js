@@ -9,14 +9,15 @@ class Node {
 }
 
 class DoublyLinkedLists {
-    // constructor(value) {
-    //     this.head = {
-    //         value: value,
-    //         next: null
-    //     },
-    //     this.tail = this.head;
-    //     this.length = 1;
-    // }
+    constructor(value) {
+        this.head = {
+            value: value,
+            previous: null,
+            next: null
+        },
+        this.tail = this.head;
+        this.length = 1;
+    }
     
     // printList() {
     //     const array = []
@@ -28,17 +29,13 @@ class DoublyLinkedLists {
     //     return array
     // }
 
-    // append(value) {
-    //     // const newNode = {
-    //     //     value: value,
-    //     //     next: null
-    //     // }
-    //     const newNode = new Node(value)
-    //     this.tail.next = newNode
-    //     this.tail = newNode
-    //     this.length++
-    //     return this
-    // }
+    append(value) {
+        const newNode = new Node(value)
+        this.tail.next = newNode
+        this.tail = newNode
+        this.length++
+        return this
+    }
 
     // prepend(value) {
     //     // const newNode = {
