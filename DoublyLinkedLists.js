@@ -31,8 +31,8 @@ class DoublyLinkedLists {
 
     append(value) {
         const newNode = new Node(value)
+        newNode.previous = this.tail
         this.tail.next = newNode
-        this.tail = newNode
         this.length++
         return this
     }
