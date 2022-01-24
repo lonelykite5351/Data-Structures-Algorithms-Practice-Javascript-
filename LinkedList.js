@@ -94,15 +94,26 @@ class LinkedList {
         }
         return currentNode
     }
+
+    reverse() {
+        if(!this.head.next) {
+            return this.head
+        }
+
+        
+    }
 }
 
-let mylinklist = new LinkedList(10)
-mylinklist.append(5)
-mylinklist.prepend(16)
-mylinklist.insert(2000, 88)
-mylinklist.insert(2, 99)
-mylinklist.insert(2, 100)
-mylinklist.remove(3)
+let mylinklist = new LinkedList(1)
+mylinklist.append(2)
+mylinklist.append(3)
+mylinklist.append(4)
+// mylinklist.prepend(16)
+// mylinklist.insert(2000, 88)
+// mylinklist.insert(2, 99)
+// mylinklist.insert(2, 100)
+// mylinklist.remove(3)
 console.log(mylinklist.printList())
+// console.log(mylinklist.reverse())
 
 // practice, not complete
