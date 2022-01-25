@@ -100,7 +100,20 @@ class LinkedList {
             return this.head
         }
 
-        
+        let first = this.head
+        this.tail = this.head
+        let second = first.next
+
+        while(second) {
+            const temp = second.next
+            second.next = first
+            first = second
+            second = temp
+        }
+        this.head.next = null
+        this.head = first
+
+        return this.printList();
     }
 }
 
@@ -114,6 +127,6 @@ mylinklist.append(4)
 // mylinklist.insert(2, 100)
 // mylinklist.remove(3)
 console.log(mylinklist.printList())
-// console.log(mylinklist.reverse())
+console.log(mylinklist.reverse())
 
 // practice, not complete
