@@ -12,13 +12,18 @@ class Stack {
         this.length = 0;
     }
     peek() {}
-    push(value) {}
+    push(value) {
+        const newNode = new Node(value)
+    }
     pop() {}
     //isEmpty
 }
 
 const myStack = new Stack();
-
+myStack.push("Discord")
+myStack.push("Udemy")
+myStack.push("google")
+console.log(myStack);
 //Discord
 //Udemy
 //google
