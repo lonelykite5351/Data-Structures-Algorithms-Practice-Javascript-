@@ -37,7 +37,16 @@ class Stack {
         return this
     }
     pop() {
-        
+        if(!this.top) {
+            return this
+        }
+        if(!this.top.next) {
+            this.bottom = null
+        }
+        const removeNode = this.top
+        this.top = this.top.next
+        this.length--
+        return removeNode
     }
 }
 
@@ -46,6 +55,10 @@ myStack.push("Discord")
 myStack.push("Udemy")
 myStack.push("google")
 console.log(myStack.peek())
+console.log(myStack.pop())
+console.log(myStack.pop())
+console.log(myStack.pop())
+console.log(myStack.pop())
 console.log(myStack.printStack());
 //Discord
 //Udemy
