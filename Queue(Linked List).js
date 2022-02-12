@@ -16,14 +16,27 @@ class Queue {
     }
     enqueue(value) {
         const newNode = new Node(value)
-        if(!this.first){
+        
+        // if(!this.first){
+        //     this.first = newNode
+        //     this.last = newNode
+        //     this.length++
+        //     return this
+        // }
+        // this.last.next = newNode
+        // this.last = newNode
+        // this.length++
+        // return this
+
+        // or
+
+        if(this.length === 0){
             this.first = newNode
             this.last = newNode
-            this.length++
-            return this
+        }else{
+            this.last.next = newNode
+            this.last = newNode
         }
-        this.last.next = newNode
-        this.last = newNode
         this.length++
         return this
     }
@@ -37,7 +50,7 @@ class Queue {
         const removeNode = this.first
         this.first = this.first.next
         this.length--
-        return this
+        return removeNode
     }
     //isEmpty;
 }
@@ -47,7 +60,7 @@ myQueue.enqueue('Joy')
 myQueue.enqueue('Matt')
 myQueue.enqueue('Pavel')
 myQueue.enqueue('Samir')
-// console.log(myQueue);
+console.log(myQueue);
 // console.log(myQueue.peek());
 
 console.log(myQueue.dequeue());
