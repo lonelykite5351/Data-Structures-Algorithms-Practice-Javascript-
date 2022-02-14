@@ -11,7 +11,11 @@ class BinarySearchTree {
         this.root = null;
     }
     insert(value) {
-        //Code here
+        if(!this.root){
+            this.root = value
+            return this
+        }
+        
     }
     lookup(value) {
         //Code here
@@ -20,14 +24,14 @@ class BinarySearchTree {
 }
 
 const tree = new BinarySearchTree();
-tree.insert(9)
-tree.insert(4)
-tree.insert(6)
-tree.insert(20)
-tree.insert(170)
-tree.insert(15)
-tree.insert(1)
-JSON.stringify(traverse(tree.root))
+console.log(tree.insert(9))
+console.log(tree.insert(4))
+console.log(tree.insert(6))
+console.log(tree.insert(20))
+console.log(tree.insert(170))
+console.log(tree.insert(15))
+console.log(tree.insert(1))
+// JSON.stringify(traverse(tree.root))
 
 //     9
 //  4     20
