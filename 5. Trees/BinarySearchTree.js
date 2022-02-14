@@ -1,8 +1,8 @@
 class Node {
     constructor(value) {
+        this.value = value;
         this.left = null;
         this.right = null;
-        this.value = value;
     }
 }
 
@@ -11,9 +11,13 @@ class BinarySearchTree {
         this.root = null;
     }
     insert(value) {
+        const newNode = new Node(value)
         if(!this.root){
-            this.root = value
+            this.root = newNode
             return this
+        }
+        if(this.root.value > newNode.value){
+            
         }
         
     }
