@@ -16,10 +16,27 @@ class BinarySearchTree {
             this.root = newNode
             return this
         }
-        if(this.root.value > newNode.value){
-            
+        else{
+            let currentNode = this.root
+            while(true){
+                if(value < currentNode.value){
+                    // Left
+                    if(!currentNode.left){
+                        currentNode.left = newNode
+                        return this
+                    }
+                    currentNode = currentNode.left
+                }
+                else{
+                    // Right
+                    if(!currentNode.right){
+                        currentNode.right = newNode
+                        return this
+                    }
+                    currentNode = currentNode.right
+                }
+            }
         }
-        
     }
     lookup(value) {
         //Code here
@@ -28,13 +45,14 @@ class BinarySearchTree {
 }
 
 const tree = new BinarySearchTree();
-console.log(tree.insert(9))
-console.log(tree.insert(4))
-console.log(tree.insert(6))
-console.log(tree.insert(20))
-console.log(tree.insert(170))
-console.log(tree.insert(15))
-console.log(tree.insert(1))
+tree.insert(9)
+tree.insert(4)
+tree.insert(6)
+tree.insert(20)
+tree.insert(170)
+tree.insert(15)
+tree.insert(1)
+console.log(tree);
 // JSON.stringify(traverse(tree.root))
 
 //     9
