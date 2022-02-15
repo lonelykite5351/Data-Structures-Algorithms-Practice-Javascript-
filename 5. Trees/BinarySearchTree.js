@@ -57,7 +57,18 @@ class BinarySearchTree {
         }
         return false
     }
-    // remove
+
+    remove(value){
+        const findNode = this.lookup(value)
+        if(findNode === false) {
+            return 'No Exist Value'
+        }
+        else{
+            if(findNode.left === null && findNode.right === null){
+                findNode = null
+            }
+        }
+    }
 }
 
 const tree = new BinarySearchTree();
