@@ -8,16 +8,28 @@
 
 function fibonacciRecursive(n) {
   //code here;
+  if(n < 2) {
+    return n
+  }
+  return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
 }
-fibonacciRecursive(3)
+console.log(fibonacciRecursive(0));
+console.log(fibonacciRecursive(1));
+console.log(fibonacciRecursive(2));
+console.log(fibonacciRecursive(3));
+console.log(fibonacciRecursive(4));
+console.log(fibonacciRecursive(5));
+console.log(fibonacciRecursive(6));
+console.log(fibonacciRecursive(7));
+console.log(fibonacciRecursive(8));
+console.log(fibonacciRecursive(9));
+console.log(fibonacciRecursive(10));
 
+// ---------------------------------------------------------------
 function fibonacciIterative(n){
   //code here;
-  if(n === 0) {
-    return 0
-  }
-  if(n === 1) {
-    return 1
+  if(n < 2) {
+    return n
   }
 
   let previousNumber2 = 0
