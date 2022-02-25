@@ -11,5 +11,9 @@ console.log(reverseString_Iteration('yoyo mastery'))
 //should return: 'yretsam oyoy'
 
 function reverseString_Recursion(str) {
-  
+  if(str === ""){
+    return ""
+  }
+  return reverseString_Recursion(str.substr(1)) + str.charAt(0)
 }
+console.log(reverseString_Recursion('yoyo mastery'))
