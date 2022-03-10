@@ -163,7 +163,7 @@ class BinarySearchTree {
     if (currentNode.right) {
       queue.push(currentNode.right);
     }
-    return BreadthFirstSearchRecursive(queue, BFSArray)
+    return this.BreadthFirstSearchRecursive(queue, BFSArray)
   }
 }
 
@@ -181,7 +181,7 @@ JSON.stringify(traverse(tree.root));
 //  4     20
 //1  6  15  170
 console.log(tree.BreadthFirstSearch()); // [9, 4, 20, 1, 6, 15, 170]
-console.log(tree.BreadthFirstSearchRecursive());
+console.log(tree.BreadthFirstSearchRecursive([tree.root], []));
 
 function traverse(node) {
   const tree = { value: node.value };
