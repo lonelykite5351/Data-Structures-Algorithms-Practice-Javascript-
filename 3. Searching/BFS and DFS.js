@@ -137,18 +137,33 @@ class BinarySearchTree {
     let currentNode = this.root;
     let queue = [];
     let BFSArray = [];
-    queue.push(currentNode)
+    queue.push(currentNode);
     while (queue.length > 0) {
-      currentNode = queue.shift()
-      BFSArray.push(currentNode.value)
-      if(currentNode.left){
-        queue.push(currentNode.left)
+      currentNode = queue.shift();
+      BFSArray.push(currentNode.value);
+      if (currentNode.left) {
+        queue.push(currentNode.left);
       }
-      if(currentNode.right){
-        queue.push(currentNode.right)
+      if (currentNode.right) {
+        queue.push(currentNode.right);
       }
     }
-    return BFSArray
+    return BFSArray;
+  }
+
+  BreadthFirstSearchRecursive(queue, BFSArray) {
+    if (queue.length === 0) {
+      return BFSArray;
+    }
+    const currentNode = queue.shift();
+    BFSArray.push(currentNode.value)
+    if(currentNode.left) {
+      queue.push(currentNode.left);
+    }
+    if (currentNode.right) {
+      queue.push(currentNode.right);
+    }
+    return BreadthFirstSearchRecursive(queue, BFSArray)
   }
 }
 
@@ -166,6 +181,7 @@ JSON.stringify(traverse(tree.root));
 //  4     20
 //1  6  15  170
 console.log(tree.BreadthFirstSearch()); // [9, 4, 20, 1, 6, 15, 170]
+console.log(tree.BreadthFirstSearchRecursive());
 
 function traverse(node) {
   const tree = { value: node.value };
