@@ -16,7 +16,7 @@ var kthSmallest = function (root, k) {
   let node = root;
   let count = 0;
 
-  while (node || stack) {
+  while (node || stack.length !== 0) {
     while (node) {
       stack.push(node);
       node = node.left;
@@ -32,5 +32,3 @@ var kthSmallest = function (root, k) {
 
 // Time: O(n)
 // Space: O(n)
-
-// https://leetcode.com/problems/kth-smallest-element-in-a-bst/
